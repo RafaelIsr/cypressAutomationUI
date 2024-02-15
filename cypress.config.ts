@@ -15,5 +15,9 @@ export default defineConfig({
             expected_conditions: 'https://play1.automationcamp.ir/expected_conditions.html'
         },
     },
+    // retries: {
+    //     runMode: 2,
+    //     openMode: 2,
+    //   },
    defaultCommandTimeout: 16000
 });
