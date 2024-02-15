@@ -2,19 +2,19 @@ import {textBoxPage} from '../../pages/TextBox'
 
 describe('TextBox', () => {
     beforeEach(() =>{
-        cy.visit(`${Cypress.env('demoQA')}/text-box`,{timeout:10000})
+        cy.visit(`${Cypress.env('demoQA')}/text-box`)
     })
     it('textBox', ()=>{
         cy.get('#userName').type('Hello');
         cy.get('#userEmail').type('World@gmail.com');
-        cy.get('#currentAddress').type('NY');
-        cy.get('#permanentAddress').type('SU');
-        cy.get('submit').click();
+        cy.get('#currentAddress').type('N-Y');
+        cy.get('#permanentAddress').type('S-U');
+        cy.get('#submit').click();
 
     })
-    it('textBox with PageObject', ()=>{
+    it.only('textBox with PageObject', ()=>{
         textBoxPage.submitButtonTextBox()
-        cy.get('Submit')
+        cy.contains('Submit')
 
     })
 })

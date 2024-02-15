@@ -19,5 +19,5 @@ export default defineConfig({
     //     runMode: 2,
     //     openMode: 2,
     //   },
-   defaultCommandTimeout: 16000
+   defaultCommandTimeout: 10000
 });
