@@ -8,7 +8,7 @@ describe('TextBox', () => {
         cy.get('#userName').type('Hello');
         cy.get('#userEmail').type('World@gmail.com');
         cy.get('#currentAddress').type('N-Y');
-        cy.get('#permanentAddress').type('SssU');
+        cy.get('#permanentAddress').type('S---U');
         cy.get('#submit').click();
 
     })
