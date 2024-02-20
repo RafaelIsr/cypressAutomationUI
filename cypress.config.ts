@@ -8,16 +8,18 @@ export default defineConfig({
       // implement node event listeners here
     },
     env: {
-      stage: "https://stage.pasv.us/course",
+      stage: "https://stage.pasv.us/user/login",
       prod: "https://coding.pasv.us/course",
       test: "Hello World!",
       demoQA: "https://demoqa.com",
       play1: "https://play1.automationcamp.ir/expected_conditions.html",
+      email: 'R.a.israfilov@gmail.com',
+      password: '12345678'
     },
   },
-  // retries: {
+  // retries: {           //* Запускать 2 раза
   //     runMode: 2,
   //     openMode: 2,
   //   },
-  defaultCommandTimeout: 10000,
+  defaultCommandTimeout: 16000, 
 });
