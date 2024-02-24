@@ -1,5 +1,5 @@
 import { defineConfig } from "cypress";
-
+require('dotenv').config()
 export default defineConfig({
   e2e: {
     baseUrl: "https://uitestingplayground.com",
@@ -8,6 +8,7 @@ export default defineConfig({
       // implement node event listeners here
     },
     env: {
+      herokuapp: "https://the-internet.herokuapp.com",
       stage: "https://stage.pasv.us",
       prod: "https://coding.pasv.us/course",
       test: "Hello World!",

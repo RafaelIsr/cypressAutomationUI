@@ -4,11 +4,11 @@ class Login {
   loginButton: string = "#login";
   logOutButton: string = "#submit";
 
-submitButtonLogin() {
-    cy.get(this.userName).type("test");
-    cy.get(this.password).type("Test1234*");
+  submitButtonLogin() {
+    cy.get(this.userName).type(process.env.COOKIESEMAIL); //! Пароль в env
+    cy.get(this.password).type(process.env.COOKIESPASS);
     cy.get(this.loginButton).click();
-    cy.contains('Log out');
+    cy.contains("Log out");
   }
 }
 
