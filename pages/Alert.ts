@@ -1,3 +1,5 @@
+import { should } from "chai";
+
 class Alert {
   private alertTextButton: string = "Click for JS Alert";
   private buttonSelecttor: string = "button";
@@ -35,6 +37,8 @@ class Alert {
       cy.stub(window, "prompt").returns(text); // i'm waiting for
       cy.contains(this.buttonSelecttor, this.jsPromptText).click();
     });
+    cy.window().its('prompt').should('be.called')       //* проверка вызова stub
+    cy.window().its('prompt').should('be.calledOnce')
     cy.get(this.resultSelector).should('include.text', text)
   }
 }
