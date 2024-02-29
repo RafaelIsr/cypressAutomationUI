@@ -17,16 +17,18 @@ class Alert {
 
   jsAlert() {
     cy.contains(this.buttonSelecttor, this.alertTextButton).click();
-    cy.on("window:alert", (textAlert) => {                //! JS
-    expect(textAlert).to.equal(this.jsAlertText);
+    cy.on("window:alert", (textAlert) => {
+      //! JS
+      expect(textAlert).to.equal(this.jsAlertText);
     });
     cy.on("window:confirm", () => true);
     cy.get(this.resultSelector).should("have.text", this.resultTextJSAlert);
   }
   jsConfirm() {
     cy.contains(this.buttonSelecttor, this.jsConfirmText).click();
-    cy.on("window:alert", (textAlert) => {                 //! JS
-    expect(textAlert).to.equal(this.jsConfirmWindowText);
+    cy.on("window:alert", (textAlert) => {
+      //! JS
+      expect(textAlert).to.equal(this.jsConfirmWindowText);
     });
     cy.on("window:confirm", () => true);
     cy.get(this.resultSelector).should("have.text", this.resultTextJSConfirm);
@@ -37,9 +39,9 @@ class Alert {
       cy.stub(window, "prompt").returns(text); // i'm waiting for
       cy.contains(this.buttonSelecttor, this.jsPromptText).click();
     });
-    cy.window().its('prompt').should('be.called')       //* проверка вызова stub
-    cy.window().its('prompt').should('be.calledOnce')
-    cy.get(this.resultSelector).should('include.text', text)
+    cy.window().its("prompt").should("be.called"); //* проверка вызова stub
+    cy.window().its("prompt").should("be.calledOnce");
+    cy.get(this.resultSelector).should("include.text", text);
   }
 }
 

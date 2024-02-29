@@ -1,0 +1,4 @@
+Debugger 
+
+в console 
+setTimeout(()=>{Debugger}, 3000)

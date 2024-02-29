@@ -1,11 +1,9 @@
 class IFrameApp {
+  getIframe() {}
 
-getIframe() {
-};
-
-visit() {
+  visit() {
     cy.visit(`${Cypress.env("herokuapp")}/iframe `);
-}
+  }
 }
 
-export const IFrameAppPage = new IFrameApp ();
+export const IFrameAppPage = new IFrameApp();
