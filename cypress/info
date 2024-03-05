@@ -2,3 +2,18 @@ Debugger
 
 в console 
 setTimeout(()=>{Debugger}, 3000)
+_________________
+
+beforeEach("", () => {
+    cy.intercept({ resourceType: /xhr|fetch/ }, { log: false });
+  });
+  
+_______________
+
+ function - has this
+ ()=>{} - does not have this
+
+ __________________
+
+// * как вывести объект полностью в cypressLog:
+// * cy.log(JSON.stringify(objectName))
